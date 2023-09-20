@@ -1,0 +1,40 @@
+python -m unittest test
+
+#This tells python to use the unittest framework for teste discovery and execution.
+
+--------------------------------------------------------------------------------------
+
+python -m unittest -v test
+
+#The -v stands for verbose and typrically is a signal to output more detail and information about what the program is doing.
+
+--------------------------------------------------------------------------------------
+
+python -m unittest discover -s tests
+
+#This looks in a directory for files that follow the naming pattern "test*.py and runs them, once they have been "discovered."  The -s is used to specify the directory where the test discovery should start looking.
+
+--------------------------------------------------------------------------------------
+
+python -m unittest discover -s tests -t src
+
+#This is like the above test except it adds the -t src part.  The -t specifies the directory where the test runner should start looking for source code or modules.  This -t differs from -s in that -s is a flag to specify the directory where test files following a naming pattern should be looked for, while -t is a flag to specify the directory where source code or modules should be looked for.
+
+--------------------------------------------------------------------------------------
+
+python -m unittest test
+F.
+======================================================================
+FAIL: test_list_fraction (test.TestSum)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test.py", line 21, in test_list_fraction
+    self.assertEqual(result, 1)
+AssertionError: Fraction(9, 10) != 1
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=1)
+
+#This test result indicates that test_list_fraction failed. The test raised an assertion error.  The test expected the result of summing the list of fractions to be equal to 1, but the actual result was 9/10.
